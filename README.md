@@ -1,4 +1,4 @@
-# React e-cShop Website
+# React e-Shop Website
 
 ## Overview
 

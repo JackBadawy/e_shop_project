@@ -1,0 +1,244 @@
+$light-color: #5ff87e;
+$dark-color: #161718;
+$white-color: #fcf7ff;
+
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@700&family=JetBrains+Mono&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  background-color: $light-color;
+}
+
+.bck-clr {
+  background-color: $light-color;
+  height: 100vh;
+  /* overflow: hidden; */
+}
+
+.nav__link {
+  text-decoration: none;
+  color: $dark-color;
+}
+
+.home {
+  &__featured {
+    text-align: center;
+    font-size: 24px;
+    font-family: "Atkinson Hyperlegible", sans-serif;
+  }
+  &__para-height {
+    height: 24px;
+    padding-top: 4px;
+  }
+  &__heading {
+    background-color: $light-color;
+    height: 64px;
+    padding-top: 8px;
+    padding-left: 16px;
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-size: 50px;
+    &-ante {
+      white-space: nowrap; // Prevents text from wrapping to the next line
+      overflow: hidden; // Hides overflowed content
+      display: flex;
+
+      background-color: $dark-color;
+      height: 18px;
+      &-span {
+        animation: scrollText 15s linear infinite;
+        width: 100vw;
+        position: absolute;
+      }
+    }
+    &-sub {
+      background-color: $dark-color;
+      color: $white-color;
+    }
+  }
+  &__carousel-container {
+    width: 240px;
+    height: 240px;
+    margin: 0, auto;
+    margin-bottom: 32px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    background-color: $white-color;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20vw;
+    padding-right: 20vw;
+  }
+  &__product-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: medium;
+    text-decoration: none;
+    width: 160px;
+    height: 320px;
+    border: 1px solid $dark-color;
+
+    &__add-to-cart {
+      margin-left: auto;
+      margin-right: auto;
+      outline: none;
+      background-color: red;
+      color: white;
+      font-weight: 800;
+      height: 32px;
+      min-width: 120px;
+      border: none;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: $dark-color;
+    }
+    &__image {
+      width: 152px;
+      border: 1px solid $dark-color;
+    }
+    &__favouriteBtn {
+      &--notFav {
+        color: black;
+      }
+      &--fav {
+        color: gold;
+      }
+    }
+  }
+}
+
+.product {
+  &__info-container {
+    background-color: $white-color;
+    padding: 8px;
+    min-height: 90vh;
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    /* overflow: hidden; */
+  }
+  &__image {
+    border: 1px solid $dark-color;
+  }
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+#favouriteBtn {
+  z-index: 3;
+  align-self: end;
+}
+
+.featured {
+  &__dot {
+    margin: 0 3px;
+    cursor: pointer;
+    font-size: 20px;
+    &-container {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__slider {
+    height: 100%;
+    position: relative;
+  }
+  &__left-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: -32px;
+    font-size: 55px;
+    color: rgb(51, 46, 46);
+    z-index: 1;
+    cursor: pointer;
+  }
+  &__right-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: -32px;
+    font-size: 55px;
+    color: rgb(51, 46, 46);
+    z-index: 1;
+    cursor: pointer;
+  }
+  &__image-slide {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.product {
+  &__fav-cont {
+    display: flex;
+    gap: 8px;
+    border-left: 2px solid goldenrod;
+    border-top: 2px solid goldenrod;
+    border-bottom: 2px solid $dark-color;
+    border-right: 2px solid $dark-color;
+    padding: 2px;
+    margin-bottom: 8px;
+  }
+  &__add-to-cart {
+    display: block;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    outline: none;
+    background-color: red;
+    color: white;
+    font-weight: 800;
+    height: 32px;
+    min-width: 120px;
+    border: none;
+  }
+  &__title {
+    margin-bottom: 16px;
+  }
+  &__price {
+    margin-bottom: 16px;
+  }
+  &__image {
+    height: 260px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 28px;
+    margin-top: 32px;
+  }
+  &__info-container {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  &__variant-select {
+    height: 24px;
+    width: 96px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+  }
+}

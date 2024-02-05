@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap");
+
+.cart {
+  &__box {
+    display: flex;
+    gap: 8px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 16px;
+    &__box {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 24px;
+    }
+  }
+  &__image {
+    height: 48px;
+    width: 48px;
+  }
+  &__heading {
+    text-align: center;
+    margin-top: 24px;
+    font-family: "Sixtyfour", sans-serif;
+  }
+  &__price {
+    &-total {
+      display: flex;
+      justify-content: center;
+
+      &-para {
+        width: 80px;
+        background-color: white;
+        padding: 8px;
+        border-radius: 8px;
+        font-weight: 700;
+      }
+    }
+  }
+}

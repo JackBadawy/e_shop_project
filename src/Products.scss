@@ -3,6 +3,7 @@ $dark-color: #161718;
 $white-color: #fcf7ff;
 
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@700&family=JetBrains+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap");
 
 * {
   margin: 0px;
@@ -28,7 +29,10 @@ html {
   &__featured {
     text-align: center;
     font-size: 24px;
-    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-family: "Sixtyfour", sans-serif;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    font-weight: 600;
   }
   &__para-height {
     height: 24px;
@@ -37,26 +41,30 @@ html {
   &__heading {
     background-color: $light-color;
     height: 64px;
-    padding-top: 8px;
+    padding-top: 16px;
     padding-left: 16px;
-    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-family: "Sixtyfour", sans-serif;
     font-size: 50px;
     &-ante {
-      white-space: nowrap; // Prevents text from wrapping to the next line
-      overflow: hidden; // Hides overflowed content
+      white-space: nowrap;
+      overflow: hidden;
       display: flex;
-
+      overflow: hidden;
       background-color: $dark-color;
       height: 18px;
       &-span {
         animation: scrollText 15s linear infinite;
         width: 100vw;
         position: absolute;
+        overflow: hidden;
       }
     }
     &-sub {
       background-color: $dark-color;
       color: $white-color;
+      font-family: "JetBrains Mono", monospace;
+      overflow: hidden;
+      padding: 2px;
     }
   }
   &__carousel-container {
@@ -77,6 +85,9 @@ html {
     align-items: center;
     padding-left: 20vw;
     padding-right: 20vw;
+    margin-left: 8%;
+    margin-right: 8%;
+    border-radius: 8px;
   }
   &__product-box {
     display: flex;
@@ -126,7 +137,6 @@ html {
     padding: 8px;
     min-height: 90vh;
     font-family: "Atkinson Hyperlegible", sans-serif;
-    /* overflow: hidden; */
   }
   &__image {
     border: 1px solid $dark-color;
@@ -240,5 +250,19 @@ html {
     margin-left: auto;
     margin-right: auto;
     margin-top: 16px;
+  }
+}
+
+.nav {
+  &__cart {
+    margin-right: 16px;
+    &-icon {
+      color: black;
+    }
+  }
+  &__cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

@@ -39,7 +39,7 @@ const Home = () => {
         <div className="home__carousel-container">
           <FeaturedCarousel />
         </div>
-        {/**todo put carosel here */}
+
         <div className="home__product-grid">
           {!productData
             ? "loading products..."

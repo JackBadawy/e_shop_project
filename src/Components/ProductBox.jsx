@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { db } from "../Config/firebase.js";
 import { doc, updateDoc } from "firebase/firestore";
 import * as productStyles from "../Products.scss";
@@ -11,7 +11,7 @@ import { ProductContext } from "../Context/ProductContext.jsx";
 
 const ProductBox = (props) => {
   const [isFavourited, setIsFavourited] = useState(props.favourited);
-  const addToCart = useContext(ProductContext);
+  const { cart, setCart } = useContext(ProductContext);
 
   const handleFavouriteClick = async (event) => {
     event.preventDefault();
@@ -26,6 +26,31 @@ const ProductBox = (props) => {
       console.error("Error updating document: ", error);
     }
   };
+
+  const handleAddToCart = (event, product) => {
+    event.preventDefault();
+    console.log("product:", product);
+    try {
+      const newCart = [...cart];
+      const existingProductIndex = newCart.findIndex(
+        (item) => item.id === product.id
+      );
+
+      if (existingProductIndex !== -1) {
+        newCart[existingProductIndex].quantity += 1;
+      } else {
+        newCart.push({ ...product, quantity: 1 });
+      }
+
+      setCart(newCart);
+    } catch (error) {
+      console.error("Error adding product to cart: ", error);
+    }
+  };
+
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
 
   return (
     <Link to={`/product/${props.id}`} className="home__product-box__link">
@@ -42,11 +67,13 @@ const ProductBox = (props) => {
         <img src={props.image} alt="" className="home__product-box__image" />
         <h5>{props.productName ? props.productName : "No product name"}</h5>
         <p>${props.value ? props.value : "no price available"}</p>
-        {/* <p>
-          Description:{" "}
-          {props.description ? props.description : "no description available"}
-        </p> */}
-        <button className="home__product-box__add-to-cart">Add to Cart</button>
+
+        <button
+          className="home__product-box__add-to-cart"
+          onClick={(event) => handleAddToCart(event, props)}
+        >
+          Add to Cart
+        </button>
       </div>
     </Link>
   );

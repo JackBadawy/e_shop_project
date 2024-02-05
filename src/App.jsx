@@ -10,7 +10,6 @@ import Cart from "./Pages/Cart";
 function App() {
   const [productData, setProductData] = useState("");
   const [cart, setCart] = useState([]);
-  //thinking we just push object to array on button click?
   const addToCart = (product) => {
     setCart([...cart, product]);
   };
@@ -24,7 +23,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<Product />} />
-            {/* <Route cart={cart} path="/Cart" element={<Cart />} /> */}
+            <Route path="/Cart" element={<Cart />} />
           </Routes>
         </BrowserRouter>
       </ProductContext.Provider>

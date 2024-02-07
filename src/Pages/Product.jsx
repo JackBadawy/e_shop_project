@@ -38,38 +38,41 @@ const Product = () => {
   }
   console.log(product);
   return (
-    <div className="bck-clr">
-      <NavBar />
+    <>
+      <div className="bck-clr">
+        <NavBar />
 
-      <div className="product__info-container">
-        <img src={product.image} alt="" className="product__image" />
+        <div className="product__info-container">
+          <img src={product.image} alt="" className="product__image" />
 
-        <h2 className="product__title">{product.productName}</h2>
-        {product.favourited && (
-          <span className="product__fav-cont">
-            <FontAwesomeIcon
-              icon={faStar}
-              className="home__product-box__favouriteBtn--fav"
-            />{" "}
-            <p>You've Favourited this item</p>
-          </span>
-        )}
-        <p className="product__price">Price: ${product.value}</p>
-        <p>Description: {product.description}</p>
+          <h2 className="product__title">{product.productName}</h2>
+          {product.favourited && (
+            <span className="product__fav-cont">
+              <FontAwesomeIcon
+                icon={faStar}
+                className="home__product-box__favouriteBtn--fav"
+              />{" "}
+              <p>You've Favourited this item</p>
+            </span>
+          )}
+          <p className="product__price">Price: ${product.value}</p>
+          <p>Description: {product.description}</p>
 
-        {product.variants && (
-          <select className="product__variant-select">
-            {product.variants.map((variant) => (
-              <option key={variant} value={variant}>
-                {variant}
-              </option>
-            ))}
-          </select>
-        )}
+          {product.variants && (
+            <select className="product__variant-select">
+              {product.variants.map((variant) => (
+                <option key={variant} value={variant}>
+                  {variant}
+                </option>
+              ))}
+            </select>
+          )}
 
-        <button className="product__add-to-cart">Add to cart</button>
+          <button className="product__add-to-cart">Add to cart</button>
+        </div>
       </div>
-    </div>
+      <div className="bck-img"></div>
+    </>
   );
 };
 

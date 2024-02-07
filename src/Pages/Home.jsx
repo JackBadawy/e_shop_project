@@ -32,7 +32,7 @@ const Home = () => {
 
   return (
     <>
-      <div>
+      <div className="bck-clr">
         <NavBar />
 
         <p className="home__featured">Featured</p>
@@ -48,6 +48,7 @@ const Home = () => {
               ))}
         </div>
       </div>
+      <div className="bck-img"></div>
     </>
   );
 };

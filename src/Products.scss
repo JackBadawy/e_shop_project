@@ -1,4 +1,5 @@
-$light-color: #5ff87e;
+$light-color: #00a2205e;
+$dark-light-color: #00450e;
 $dark-color: #161718;
 $white-color: #fcf7ff;
 
@@ -14,13 +15,25 @@ html {
   background-color: $light-color;
 }
 
-.bck-clr {
-  background-color: $light-color;
-  height: 100vh;
-  /* overflow: hidden; */
+.bck {
+  &-clr {
+    height: 100vh;
+  }
+  &-img {
+    background: url("img/background20.jpg") no-repeat center center fixed;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+  }
 }
 
-.nav__link {
+.bck-img .nav__link {
   text-decoration: none;
   color: $dark-color;
 }
@@ -39,12 +52,12 @@ html {
     padding-top: 4px;
   }
   &__heading {
-    background-color: $light-color;
     height: 64px;
     padding-top: 16px;
     padding-left: 16px;
     font-family: "Sixtyfour", sans-serif;
     font-size: 50px;
+    text-decoration: none;
     &-ante {
       white-space: nowrap;
       overflow: hidden;
@@ -113,6 +126,10 @@ html {
       height: 32px;
       min-width: 120px;
       border: none;
+      cursor: pointer;
+      &:hover {
+        background-color: rgb(213, 0, 0);
+      }
     }
 
     &__link {
@@ -180,20 +197,22 @@ html {
     top: 50%;
     transform: translate(0, -50%);
     left: -32px;
-    font-size: 55px;
+    font-size: 80px;
     color: rgb(51, 46, 46);
     z-index: 1;
     cursor: pointer;
+    user-select: none;
   }
   &__right-arrow {
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
     right: -32px;
-    font-size: 55px;
+    font-size: 80px;
     color: rgb(51, 46, 46);
     z-index: 1;
     cursor: pointer;
+    user-select: none;
   }
   &__image-slide {
     width: 100%;
@@ -201,6 +220,7 @@ html {
     border-radius: 10px;
     background-position: center;
     background-size: cover;
+    border: 2px solid $dark-light-color;
   }
 }
 
@@ -227,6 +247,10 @@ html {
     height: 32px;
     min-width: 120px;
     border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(213, 0, 0);
+    }
   }
   &__title {
     margin-bottom: 16px;
@@ -267,5 +291,9 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  &__link {
+    text-decoration: none;
+    color: $dark-color;
   }
 }

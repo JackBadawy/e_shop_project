@@ -65,6 +65,9 @@ html {
       font-family: "JetBrains Mono", monospace;
       overflow: hidden;
       padding: 2px;
+      @media screen and (max-width: 560px) {
+        color: $dark-color;
+      }
     }
   }
   &__carousel-container {

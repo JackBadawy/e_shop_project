@@ -29,7 +29,6 @@ const ProductBox = (props) => {
 
   const handleAddToCart = (event, product) => {
     event.preventDefault();
-    console.log("product:", product);
     try {
       const newCart = [...cart];
       const existingProductIndex = newCart.findIndex(
@@ -47,10 +46,6 @@ const ProductBox = (props) => {
       console.error("Error adding product to cart: ", error);
     }
   };
-
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
 
   return (
     <Link to={`/product/${props.id}`} className="home__product-box__link">

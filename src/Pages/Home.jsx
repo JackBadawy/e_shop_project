@@ -19,7 +19,6 @@ const Home = () => {
           ...doc.data(),
           id: doc.id,
         }));
-        console.log(filteredData);
         setProductData(filteredData);
       } catch (err) {
         throw new Error(err);
@@ -27,8 +26,6 @@ const Home = () => {
     };
     getProductList();
   }, []);
-
-  console.log("product data:", productData);
 
   return (
     <>

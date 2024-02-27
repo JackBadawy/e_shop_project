@@ -7,8 +7,6 @@ import NavBar from "../Components/NavBar";
 const Cart = () => {
   const { cart, setCart } = useContext(ProductContext);
 
-  console.log("cart:", cart);
-
   let totalPrice = 0;
 
   const priceCalc = (price, quant) => {

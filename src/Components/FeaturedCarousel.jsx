@@ -1,5 +1,7 @@
 import { useState, useContext } from "react";
 import { ProductContext } from "../Context/ProductContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretRight, faCaretLeft } from "@fortawesome/free-solid-svg-icons";
 
 const FeaturedCarousel = () => {
   const [currentImage, setCurrentimage] = useState(0);
@@ -29,11 +31,11 @@ const FeaturedCarousel = () => {
     <>
       <div className="featured__slider">
         <div className="featured__left-arrow" onClick={goToPrevious}>
-          &#129168;
+          <FontAwesomeIcon icon={faCaretLeft} />
         </div>
         <div className="featured__image-slide" style={slideStyles}></div>
         <div className="featured__right-arrow" onClick={goToNext}>
-          &#129170;
+          <FontAwesomeIcon icon={faCaretRight} />
         </div>
         <div className="featured__dot-container">
           {productData &&

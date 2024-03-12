@@ -60,15 +60,17 @@ const ProductBox = (props) => {
           <FontAwesomeIcon icon={faStar} className="" />
         </div>
         <img src={props.image} alt="" className="home__product-box__image" />
-        <h5>{props.productName ? props.productName : "No product name"}</h5>
-        <p>${props.value ? props.value : "no price available"}</p>
+        <div className="home__product-box__bottom-wrapper">
+          <h5>{props.productName ? props.productName : "No product name"}</h5>
+          <p>${props.value ? props.value : "no price available"}</p>
 
-        <button
-          className="home__product-box__add-to-cart"
-          onClick={(event) => handleAddToCart(event, props)}
-        >
-          Add to Cart
-        </button>
+          <button
+            className="home__product-box__add-to-cart"
+            onClick={(event) => handleAddToCart(event, props)}
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
     </Link>
   );

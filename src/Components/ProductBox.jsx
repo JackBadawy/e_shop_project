@@ -5,7 +5,7 @@ import * as productStyles from "../Products.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-//check out phosper icons
+import { toast } from "react-toastify";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { ProductContext } from "../Context/ProductContext.jsx";
 
@@ -29,6 +29,8 @@ const ProductBox = (props) => {
 
   const handleAddToCart = (event, product) => {
     event.preventDefault();
+    const toastProductName = product.productName.substring(0, 15);
+    toast(`Added to cart ${toastProductName}...`);
     try {
       const newCart = [...cart];
       const existingProductIndex = newCart.findIndex(

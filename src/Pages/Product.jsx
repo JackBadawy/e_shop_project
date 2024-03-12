@@ -5,6 +5,7 @@ import NavBar from "../Components/NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { ProductContext } from "../Context/ProductContext";
+import { toast } from "react-toastify";
 
 const Product = () => {
   const { id } = useParams();
@@ -39,6 +40,8 @@ const Product = () => {
 
   const handleAddToCart = (event, product) => {
     event.preventDefault();
+    const toastProductName = product.productName.substring(0, 15);
+    toast(`Added to cart ${toastProductName}...`);
     try {
       const newCart = [...cart];
       const existingProductIndex = newCart.findIndex(
@@ -81,7 +84,7 @@ const Product = () => {
           <p className="product__price">Price: ${product.value}</p>
           <p>Description: {product.description}</p>
 
-          {product.variants && (
+          {/* {product.variants && (
             <select className="product__variant-select">
               {product.variants.map((variant) => (
                 <option key={variant} value={variant}>
@@ -89,7 +92,7 @@ const Product = () => {
                 </option>
               ))}
             </select>
-          )}
+          )} */}
 
           <button
             className="product__add-to-cart"
